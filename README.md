@@ -4,6 +4,10 @@
 
 A place for me to hone my RPA skills. Currently a newbie and will continue to add on.
 
+## 🛠RPA Tool used🛠
+
+UiPath Studio Pro Community
+
 ## 📚Resources used📚
 
 Here are some resources I will be using to embark on this RPA journey!
