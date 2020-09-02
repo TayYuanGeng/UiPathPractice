@@ -86,11 +86,11 @@
         <InArgument x:TypeArguments="x:Int32">[numberArray(0)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="870.666666666667,600.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[numberArray]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="870.666666666667,600.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[numberArray]">
       <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="x:Object">
+        <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="value" />
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="value" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="834,462" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <sap:WorkflowViewStateService.ViewState>
@@ -98,7 +98,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[maximum &lt; Convert.ToInt32(value)]" sap:VirtualizedContainerService.HintSize="792,370" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[maximum &lt; value]" sap:VirtualizedContainerService.HintSize="792,370" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_4">
                   <Assign.To>
@@ -110,7 +110,7 @@
                 </Assign>
               </If.Then>
               <If.Else>
-                <If Condition="[minimum &gt; Convert.ToInt32(value)]" sap:VirtualizedContainerService.HintSize="484,216" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[minimum &gt; value]" sap:VirtualizedContainerService.HintSize="484,216" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Then>
                     <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_6">
                       <Assign.To>
@@ -128,6 +128,6 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="870.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;The Maximum Number is: &quot; + maximum.ToString + &quot;.&quot; + &quot;The minimum number is: &quot; + minimum.ToString]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="870.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;The Maximum Number is: &quot; + maximum.ToString + &quot;. &quot; + &quot;The minimum number is: &quot; + minimum.ToString + &quot;.&quot;]" />
   </Sequence>
 </Activity>
