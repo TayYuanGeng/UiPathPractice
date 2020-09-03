@@ -105,7 +105,7 @@
                     <OutArgument x:TypeArguments="x:Int32">[maximum]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(value)]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32">[value]</InArgument>
                   </Assign.Value>
                 </Assign>
               </If.Then>
@@ -117,7 +117,7 @@
                         <OutArgument x:TypeArguments="x:Int32">[minimum]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(value)]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32">[value]</InArgument>
                       </Assign.Value>
                     </Assign>
                   </If.Then>
