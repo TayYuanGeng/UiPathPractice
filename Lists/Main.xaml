@@ -76,6 +76,7 @@
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <AddToCollection x:TypeArguments="x:String" Collection="[UKCities]" DisplayName="Add London to UKCities" sap:VirtualizedContainerService.HintSize="340.666666666667,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="London" />
