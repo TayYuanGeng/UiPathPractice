@@ -23,3 +23,5 @@
 <p align="center">
   “The future belongs to those who learn more skills and combine them in creative ways.” — Robert Greene
 </p>
+
+<h5><br><br><br> Note: Stuff done here are based on RPA Developer Foundation in UiPath Academy </h5>
