@@ -1,5 +1,5 @@
 {
-  "name": "FineTuningSelectorsDemo",
+  "name": "UsingIndexSelectorsInVariables",
   "description": "Selectors - Fine-tuning, Lesson 5",
   "main": "Main.xaml",
   "dependencies": {
