@@ -1,0 +1,228 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="626,2352.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="29">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Get and Sort Data Sequence" sap:VirtualizedContainerService.HintSize="530.666666666667,2148" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="www.fakepersongenerator.com" Name="generatorURL" />
+      <Variable x:TypeArguments="x:String" Name="excelName" />
+      <Variable x:TypeArguments="sd:DataTable" Name="outputDT" />
+      <Variable x:TypeArguments="x:String" Name="outputFolder" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:SelectFolder DisplayName="Select Folder" sap:VirtualizedContainerService.HintSize="488.666666666667,22" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[outputFolder]" />
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="488.666666666667,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please provide the name of excel file." Title="Prompt">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[excelName]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:BuildDataTable DataTable="[outputDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="488.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Phone&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Birth-Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Email-Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;City_x002C__x0020_State_x002C__x0020_Zip&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;      &lt;xs:unique name=&quot;Constraint1&quot;&gt;&#xD;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xD;&#xA;        &lt;xs:field xpath=&quot;Name&quot; /&gt;&#xD;&#xA;      &lt;/xs:unique&gt;&#xD;&#xA;      &lt;xs:unique name=&quot;Constraint2&quot;&gt;&#xD;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xD;&#xA;        &lt;xs:field xpath=&quot;Phone&quot; /&gt;&#xD;&#xA;      &lt;/xs:unique&gt;&#xD;&#xA;      &lt;xs:unique name=&quot;Constraint3&quot;&gt;&#xD;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xD;&#xA;        &lt;xs:field xpath=&quot;Email-Address&quot; /&gt;&#xD;&#xA;      &lt;/xs:unique&gt;&#xD;&#xA;      &lt;xs:unique name=&quot;Constraint4&quot;&gt;&#xD;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xD;&#xA;        &lt;xs:field xpath=&quot;City_x002C__x0020_State_x002C__x0020_Zip&quot; /&gt;&#xD;&#xA;      &lt;/xs:unique&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="488.666666666667,1456" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[generatorURL]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="454.666666666667,1353.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412.666666666667,1261.33333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1092" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="cityStateZip" />
+                    <Variable x:TypeArguments="x:String" Name="personName" />
+                    <Variable x:TypeArguments="x:String" Name="personPhone" />
+                    <Variable x:TypeArguments="x:String" Name="email" />
+                    <Variable x:TypeArguments="x:String" Name="birthdate" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Generate Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="344f9267-1161-4a86-8b98-3136ce6ccc79" InformativeScreenshot="38eadc318e25ab93250a8b23e2a0cdde" Selector="&lt;html app='chrome.exe' title='Fake Person/Name Generator | User Identity, Account and Profile Generator' /&gt;&lt;webctrl tag='INPUT' type='submit' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Person Name" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                    <ui:GetValue.Target>
+                      <ui:Target Element="{x:Null}" Id="cc7a77ad-4b50-4480-a16e-a43348447060" InformativeScreenshot="b22cfed19dbd6fa0565a1a61e5135ae2" Selector="&lt;html app='chrome.exe' title='Fake Person/Name Generator | User Identity, Account and Profile Generator' /&gt;&lt;webctrl tag='B' aaname='*' parentclass='text-center name' /&gt;">
+                        <ui:Target.ClippingRegion>
+                          <ui:Region Rectangle="12, 3, 88, 14" />
+                        </ui:Target.ClippingRegion>
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[personName]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Phone Number" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cc7a77ad-4b50-4480-a16e-a43348447060" InformativeScreenshot="f6aa0b9c71aaf06d80ed51c3b349e481" Selector="&lt;html app='chrome.exe' title='Fake Person/Name Generator | User Identity, Account and Profile Generator' /&gt;&lt;webctrl tag='P' aaname='Mobile: *' parentclass='col-md-8 col-sm-6 col-xs-12' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[personPhone]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Birth-date" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cc7a77ad-4b50-4480-a16e-a43348447060" InformativeScreenshot="97dda208fbec062752221cb27409095e" Selector="&lt;html app='chrome.exe' title='Fake Person/Name Generator | User Identity, Account and Profile Generator' /&gt;&lt;webctrl tag='B' aaname='*' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[birthdate]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Email-Address" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="20d79a04-3668-4858-8165-5bf4f762c84d" InformativeScreenshot="aaab535b4fd052ec25ddc6a918799faa" Selector="&lt;html app='chrome.exe' title='Fake Person/Name Generator | User Identity, Account and Profile Generator' /&gt;&lt;webctrl tag='INPUT' type='text' text='*' parentclass='info-detail' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text City, State, Zip" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="20d79a04-3668-4858-8165-5bf4f762c84d" InformativeScreenshot="3d1ed0bf630f3e7285cd2b3c485214f0" Selector="&lt;html app='chrome.exe' title='Fake Person/Name Generator | User Identity, Account and Profile Generator' /&gt;&lt;webctrl tag='P' aaname='City, State, Zip: *' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[cityStateZip]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{personName, personPhone, birthdate, email, cityStateZip}]" DataTable="[outputDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                  <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[index + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+              <ui:InterruptibleDoWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="index &lt; 10" />
+              </ui:InterruptibleDoWhile.Condition>
+            </ui:InterruptibleDoWhile>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+    <ui:WriteRange AddHeaders="False" DataTable="[outputDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="488.666666666667,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[outputFolder + &quot;\&quot; + excelName + &quot;.xlsx&quot;]" />
+  </Sequence>
+</Activity>
