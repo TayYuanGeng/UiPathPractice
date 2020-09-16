@@ -1,6 +1,6 @@
 {
-  "name": "GetAndSortData",
-  "description": "Selectors - Get and Sort Data (Practice 1)",
+  "name": "StateMachine",
+  "description": "Project Organization - How to choose the best project layout?, Lesson 2",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.2-preview]",
