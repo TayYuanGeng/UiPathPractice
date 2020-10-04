@@ -1,6 +1,6 @@
 {
-  "name": "BasicDebuggingFeatures",
-  "description": "Debugging - Basic Debugging Features, Lesson 3",
+  "name": "BasicAndAdvancedDebuggingFeatures",
+  "description": "Debugging - Basic & Advanced Debugging Features, Lesson 3/4",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.7.1-ce]",
