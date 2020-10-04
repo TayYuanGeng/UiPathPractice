@@ -1,6 +1,6 @@
 {
   "name": "FixMyWorkflow",
-  "description": "Debugging - Fix My Workflow, Practice 1",
+  "description": "Debugging - Fix My Workflow (Practice 1)",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.5.2]",
