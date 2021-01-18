@@ -15,11 +15,15 @@
 <h2 align="center">:books:Resources used:books:</h2>
 <p align="center">
   Here are some resources I will be using to embark on this RPA journey!<br>
-  :clipboard: https://www.youtube.com/watch?v=MBl-3Yb30FA<br>
-  :clipboard: https://academy.uipath.com/static-page/5<br><br>
+  :clipboard: https://academy.uipath.com/DirectLaunch?cid=S9VOLvkibew_&io=tgpwv6P5Xm0_&md=nNLApdJeWJI_ <br>
+  :clipboard: https://academy.uipath.com/DirectLaunch?cid=gmOJkKXsqxY_&io=tgpwv6P5Xm0_&md=nNLApdJeWJI_ <br>
+  :clipboard: https://academy.uipath.com/DirectLaunch?cid=mL0qemNWxd0_&io=tgpwv6P5Xm0_&md=nNLApdJeWJI_ <br>
+  :clipboard: https://academy.uipath.com/DirectLaunch?cid=2h1aQ8LYHwE_&io=tgpwv6P5Xm0_&md=nNLApdJeWJI_ <br><br>
 </p>
 
 <h2 align="center">:muscle:Motivation!:muscle:</h2>
 <p align="center">
   “The future belongs to those who learn more skills and combine them in creative ways.” — Robert Greene
 </p>
+
+<h5><br><br><br> Note: Stuff done here are based on RPA Developer Foundation & Advanced in UiPath Academy </h5>
